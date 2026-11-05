@@ -1,26 +1,2 @@
 #!/bin/bash
-#
-#
-#We have a task wherein we want to count the directories within `PATH`
-#To do this, we can use the delimiters and seperators; `:/`
-#
-#We need to create a script that counts ':/' + 1
-#This is because we are actually counting the delimiters and seperators which
-#misses 1 directory since the first directory is NOT seperated by a delimiter
-#
-#wc needs to count the ':/' characters of an output; so `wc -c`
-#However if we count the characters, now we have 2 characters per instance
-#So to solve this, we can just have `tr` replace every `:/` with something else
-#We need something that translates ':/' into something countable; lets use `tr`
-#Lastly, we need to ensure that we allows +1 whatever `wc` gives us, so we 
-#can use some sort of mathamtical expression attached to `wc`
-#
-#It's possible this can be solved using another command, like `grep` or `cut`
-#`cut` is not efficient since we will have to count for or against every cut made
-#But this can work to our advantage
-#If PATH needs to have 10 cuts, we can can the amount of counts be counted, then +1
-#
-#Actually it cannot be `wc` since it doesn't count a specifically requested word; perhaps `grep` is correct
-#
 echo "$(( $(printf $PATH | tr ':/' '\n' | grep -c '\n') + 1 ))"
-#echo $((a + 1))
