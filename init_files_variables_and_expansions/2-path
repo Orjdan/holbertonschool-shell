@@ -1,4 +1,2 @@
 #!/bin/bash
 export PATH="$PATH:/action"
-echo "iniside script, PATH is: $PATH"
-echo "script PID: $$"
