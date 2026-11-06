@@ -1,2 +1,2 @@
 #!/bin/bash
-export BINARY=printf \NNN '\n'
+echo $((2#$BINARY))
