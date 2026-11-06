@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(( $(printf $PATH | tr ':/' '\n' | grep -c '\n') + 1 ))"
+echo $(( "$(printf '%s\n' $PATH | grep -o ':/' | wc -l)" + 1 ))
